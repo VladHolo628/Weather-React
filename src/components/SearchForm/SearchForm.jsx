@@ -1,10 +1,10 @@
 import './SearchForm.css'
 
-const SearchForm = (props) => {
+const SearchForm = ({changeHandler, submitHandler}) => {
 
     return (
-        <form onSubmit={props.submitHandler} className="app__search-form">
-            <input onChange={props.changeHandler} className="app__search-input" type="text" placeholder="Aktobe" />
+        <form onSubmit={submitHandler} className="app__search-form">
+            <input onChange={changeHandler} className="app__search-input" type="text" placeholder="Aktobe" />
             <button className="app__search-btn" type="submit"></button>
         </form>
     )

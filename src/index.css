@@ -219,6 +219,9 @@ body {
 .details__name {
   margin-right: 5px;
 }
+.details__data-weather {
+  font-size: 20px;
+}
 .forecast {
   max-height: 284px;
   overflow-y: auto;
