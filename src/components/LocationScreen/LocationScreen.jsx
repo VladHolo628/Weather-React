@@ -1,8 +1,10 @@
 import {format, fromUnixTime} from 'date-fns';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CityContext } from '../../App';
 
-function LocationScreen({screen,city}) {
+function LocationScreen({screen}) {
   const [isActive, setActive] = useState('')
+  const city = useContext(CityContext)
   const handleLike = () => {
     isActive === ''? setActive('--active'): setActive('')
   }

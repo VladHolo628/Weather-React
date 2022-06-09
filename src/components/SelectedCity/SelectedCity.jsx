@@ -3,13 +3,13 @@
 import Tabs from "../Tabs/Tabs"
 
 
-function SelectedCity({city}) {
+function SelectedCity() {
 
 
     return (
         <div className="current-location">
 
-            <Tabs city={city}></Tabs>
+            <Tabs ></Tabs>
         </div>
      
     )

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import SearchForm from './components/SearchForm/SearchForm'
@@ -9,6 +9,8 @@ let defaultCity = 'Aktobe'
 
 const serverUrl = "http://api.openweathermap.org/data/2.5/weather";
 const apiKey = "f660a2fb1e4bad108d6160b7f58c555f";
+
+export const CityContext = createContext();
 
 function App() {
   const [cityToSearch, setCityToSearch] = useState('')
@@ -44,18 +46,19 @@ function App() {
     setCityToSearch(inputtedCity)
     
   }
-  // if(typeof selectedCity.main === undefined) {
-  //   return ''
-  // } else {
+ 
 
     return (
+      <CityContext.Provider value={selectedCity}>
       <div className='app'>
         <SearchForm changeHandler={changeHandler} submitHandler={submitHandler}/>
         <AppContent>
-          <SelectedCity city={selectedCity}/>
+          <SelectedCity />
           <AddedLocations/>
         </AppContent>
       </div>
+      </CityContext.Provider>
+
      
     )
   

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import LocationScreen from '../LocationScreen/LocationScreen'
 
-function Tabs({city}) {
+function Tabs() {
    const [currentTab, setCurrentTab] = useState('Now')
 
 
@@ -13,7 +13,7 @@ function Tabs({city}) {
 
     return (
       <>
-        <LocationScreen screen={currentTab} city={city}></LocationScreen>
+        <LocationScreen screen={currentTab}></LocationScreen>
         <div className="tabs">
         <ul className="tabs__list">
           {buttons.map((button) => {
